@@ -1,0 +1,21 @@
+# Ignoră fișierele de proiect Vivado, jurnalele și bazele de date
+*.xpr
+*.log
+*.jou
+*.pb
+*.str
+*.wdb
+*.dir/
+
+# Ignoră folderele generate automat la sinteză și implementare
+.Xil/
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.ip_user_files/
+
+# Permite doar fișierele esențiale (Codul tău sursă și constrângerile)
+!*.sv
+!*.v
+!*.xdc
