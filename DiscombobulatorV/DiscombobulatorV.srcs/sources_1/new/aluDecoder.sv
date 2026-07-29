@@ -14,7 +14,7 @@ always_comb begin
     case(aluOp)
         2'b00: aluControl = 3'b000; //add
         2'b01: aluControl = 3'b001; //sub
-        2'b10: 
+        default: 
         begin
             case(funct3)
                 3'b000: 
