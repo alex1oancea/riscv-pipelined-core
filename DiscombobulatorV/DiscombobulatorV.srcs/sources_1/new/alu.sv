@@ -2,7 +2,8 @@ module alu(
     input logic [31:0] in0,
     input logic [31:0] in1,
     input logic [2:0] sel,
-    output logic [31:0] out
+    output logic [31:0] out,
+    output logic zf
     );
     
 always_comb begin
@@ -15,5 +16,8 @@ always_comb begin
         default: out = 32'bx;
     endcase
 end
+
+//ZF logic
+assign zf = (out == 32'd0);
    
 endmodule

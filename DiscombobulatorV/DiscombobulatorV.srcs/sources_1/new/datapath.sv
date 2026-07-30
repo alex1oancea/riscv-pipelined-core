@@ -42,6 +42,6 @@ extend Extend(instr[31:7], immSrc, immExt);
 
 //ALU logic    
 mux2 #(32) SRCbMux(writeData, immExt, aluSrc, srcB);
-alu ALU (srcA, srcB, immSrc, immExt);
+alu ALU (srcA, srcB, aluControl, aluResult, zero);
 mux3 #(32) ResultMux (aluResult, readData, pcPlus4, resultSrc, result);   
 endmodule
