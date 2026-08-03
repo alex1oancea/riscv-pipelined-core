@@ -1,7 +1,7 @@
 module datapath(
     input logic clk, reset,
     input logic [1:0] resultSrc,
-    input logic pcSrc, aluSRc,
+    input logic pcSrc, aluSrc,
     input logic regWrite,
     input logic [1:0] immSrc,
     input logic [2:0] aluControl,
@@ -18,7 +18,7 @@ logic [31:0] pcNext, pcPlus4, pcTarget, immExt, srcA, srcB, result;
 flopr #(.size(32)) PC
 (
     .d(pcNext),
-    .clk(clk), .rst(rst),
+    .clk(clk), .rst(reset),
     .q(pc)
 );
 
@@ -27,7 +27,7 @@ assign pcTarget = pc + immExt;
 mux2 #(32) pcMux(pcPlus4, pcTarget, pcSrc, pcNext);
 
 //register file logic
-refile RegFile(
+regfile RegFile(
     .clk(clk),
     .WE3(regWrite),
     .A1(instr[19:15]),
@@ -35,7 +35,7 @@ refile RegFile(
     .A3(instr[11:7]),
     .WD3(result),
     .RD1(srcA),
-    .RD2(srcB)
+    .RD2(writeData)
 );
 
 extend Extend(instr[31:7], immSrc, immExt);

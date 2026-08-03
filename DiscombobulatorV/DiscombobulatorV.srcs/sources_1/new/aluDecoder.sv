@@ -8,7 +8,7 @@ module aluDecoder(
 
 logic RtypeSub;
 
-assign RtypeSub = op_b5 & funct7b5; //true for rtype sub
+assign RtypeSub = funct7b5 & op_b5; //true for rtype sub
 
 always_comb begin
     case(aluOp)

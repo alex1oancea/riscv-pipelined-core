@@ -1,4 +1,4 @@
-module refile(
+module regfile(
     input logic clk,
     input logic WE3,
     input logic [4:0] A1,
@@ -9,7 +9,7 @@ module refile(
     output logic [31:0] RD2
 );
 
-logic [0:31] mem [31:0];
+logic [31:0] mem [31:0];
 
 assign RD1 = (A1 == 0) ? 32'd0 : mem[A1];
 assign RD2 = (A2 == 0) ? 32'd0 : mem[A2];
