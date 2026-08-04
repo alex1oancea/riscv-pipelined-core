@@ -7,7 +7,7 @@ This project is an educational implementation of the RISC-V architecture. It sta
 
 ## 📖 Complete Documentation
 For a deep dive into the microarchitecture, critical path analysis, hardware schematics, and simulation waveforms, please refer to the official documentation:
-👉 **[Read the Microarchitecture Specification & Design Documentation (PDF)](docs/RISCV_Microarchitecture_Spec.pdf)**
+👉 **[Read the Microarchitecture Specification & Design Documentation (PDF)](/docs/RISCV_Microarchitecture_Spec.pdf)**
 
 ## 🏗️ Architecture Details
 * **Instruction Set:** RV32I
