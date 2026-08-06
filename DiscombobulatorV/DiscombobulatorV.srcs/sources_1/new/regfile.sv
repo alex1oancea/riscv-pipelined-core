@@ -14,7 +14,7 @@ logic [31:0] mem [31:0];
 assign RD1 = (A1 == 0) ? 32'd0 : mem[A1];
 assign RD2 = (A2 == 0) ? 32'd0 : mem[A2];
 
-always_ff @(posedge clk) begin
+always_ff @(negedge clk) begin
     if (WE3 == 1)
         mem[A3] <= WD3;
 end

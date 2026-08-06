@@ -20,13 +20,13 @@ module datapath(
 logic [31:0] pcNext, pcPlus4F;
 // Decode
 logic [31:0] pcD, pcPlus4D, rd1D, rd2D, immExtD;
-logic [4:0]  rdD;
+logic [4:0]  rdD, rs1D, rs2D;
 // Execute
 logic regWriteE, memWriteE, jumpE, branchE, aluSrcE;
 logic [1:0]  resultSrcE;
 logic [2:0]  aluControlE;
 logic [31:0] rd1E, rd2E, pcE, immExtE, pcPlus4E, srcAE, srcBE, aluResultE, writeDataE, pcTargetE;
-logic [4:0]  rdE;
+logic [4:0]  rdE, rs1E, rs2E;
 logic zeroE, pcSrcE;
 // Memory
 logic regWriteM;
@@ -38,7 +38,8 @@ logic regWriteW;
 logic [1:0]  resultSrcW;
 logic [31:0] aluResultW, readDataW, pcPlus4W, resultW;
 logic [4:0]  rdW;
-
+//Hazard Unit
+logic [1:0] forwardAE, forwardBE;
 
 //FETCH STAGE
 mux2 #(32) pcMux(pcPlus4F, pcTargetE, pcSrcE, pcNext);
@@ -60,15 +61,15 @@ if_id_reg IF_ID(
 
 
 //DECODE STAGE
-assign rdD = instrD[11:7]; // Extragem adresa registrului destinatie
+assign rdD = instrD[11:7]; 
 
 regfile RegFile(
     .clk(clk),
-    .WE3(regWriteW),           // ATENTIE: Semnalul de scriere vine din stadiul W!
+    .WE3(regWriteW),           
     .A1(instrD[19:15]),
     .A2(instrD[24:20]),
-    .A3(rdW),                  // ATENTIE: Destinatia vine din stadiul W!
-    .WD3(resultW),             // ATENTIE: Datele vin din stadiul W!
+    .A3(rdW),                  
+    .WD3(resultW),             
     .RD1(rd1D),
     .RD2(rd2D)
 );
@@ -82,6 +83,8 @@ extend Extend(
 //ID/EX 
 id_ex_reg ID_EX(
     .clk(clk), .rst(reset),
+    .rs1D(instrD[19:15]), .rs2D(instrD[24:20]),
+    .rs1E(rs1E), .rs2E(rs2E),
     .regWriteD(regWriteD), .resultSrcD(resultSrcD), .memWriteD(memWriteD),
     .jumpD(jumpD), .branchD(branchD), .aluControlD(aluControlD), .aluSrcD(aluSrcD),
     .rd1D(rd1D), .rd2D(rd2D), .pcD(pcD), .rdD(rdD), .immExtD(immExtD), .pcPlus4D(pcPlus4D),
@@ -91,8 +94,19 @@ id_ex_reg ID_EX(
 );
 
 
-assign srcAE = rd1E;
-assign writeDataE = rd2E;
+hazardUnit HazardUnit(
+    .rs1E(rs1E),
+    .rs2E(rs2E),
+    .rdM(rdM),
+    .rdW(rdW),
+    .regWriteM(regWriteM),
+    .regWriteW(regWriteW),
+    .forwardAE(forwardAE),
+    .forwardBE(forwardBE)
+    );
+
+mux3 #32 MuxForwardA (rd1E, resultW, aluResultM, forwardAE, srcAE);
+mux3 #32 MuxForwardB (rd2E, resultW, aluResultM, forwardBE, writeDataE);
 
 mux2 #(32) srcBMux(writeDataE, immExtE, aluSrcE, srcBE);
 

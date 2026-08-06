@@ -14,6 +14,10 @@ module id_ex_reg (
     input logic [11:7] rdD,
     input logic [31:0] immExtD,
     input logic [31:0] pcPlus4D,
+    input logic [19:15] rs1D,
+    input logic [24:20] rs2D,
+    output logic [19:15] rs1E,
+    output logic [24:20] rs2E,
     output logic pcE,
     output logic [31:0] rd1E,
     output logic [31:0] rd2E,
@@ -45,6 +49,8 @@ always_ff @(posedge clk, posedge rst) begin
             pcPlus4E <= 32'd0;
             rd1E <= 32'd0;
             rd2E <= 32'd0;
+            rs2E <= 5'd0;
+            rs1E <= 5'd0;
         end
     else
         begin
@@ -61,6 +67,8 @@ always_ff @(posedge clk, posedge rst) begin
             pcPlus4E <= pcPlus4D;
             rd1E <= rd1D;
             rd2E <= rd2D;
+            rs2E <= rs2D;
+            rs1E <= rs1D;
         end
 end
 
