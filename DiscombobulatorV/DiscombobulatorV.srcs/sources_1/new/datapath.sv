@@ -1,47 +1,137 @@
 module datapath(
     input logic clk, reset,
-    input logic [1:0] resultSrc,
-    input logic pcSrc, aluSrc,
-    input logic regWrite,
-    input logic [1:0] immSrc,
-    input logic [2:0] aluControl,
-    output logic zero,
-    output logic [31:0] pc,
-    input logic [31:0] instr,
-    output logic [31:0] aluResult, writeData,
-    input logic [31:0] readData
-    );
-
-logic [31:0] pcNext, pcPlus4, pcTarget, immExt, srcA, srcB, result;
-
-//next pc logic
-flopr #(.size(32)) PC
-(
-    .d(pcNext),
-    .clk(clk), .rst(reset),
-    .q(pc)
+    input logic [1:0] resultSrcD,
+    input logic aluSrcD,
+    input logic regWriteD,
+    input logic memWriteD,
+    input logic [1:0] immSrcD,
+    input logic [2:0] aluControlD,
+    input logic branchD,
+    input logic jumpD,
+    output logic [31:0] pcF,
+    input logic [31:0] instrF,
+    output logic [31:0] aluResultM, writeDataM,
+    output logic memWriteM,
+    input logic [31:0] readDataM,
+    output logic [31:0] instrD
 );
 
-assign pcPlus4 = pc + 32'd4;
-assign pcTarget = pc + immExt;
-mux2 #(32) pcMux(pcPlus4, pcTarget, pcSrc, pcNext);
+// Fetch
+logic [31:0] pcNext, pcPlus4F;
+// Decode
+logic [31:0] pcD, pcPlus4D, rd1D, rd2D, immExtD;
+logic [4:0]  rdD;
+// Execute
+logic regWriteE, memWriteE, jumpE, branchE, aluSrcE;
+logic [1:0]  resultSrcE;
+logic [2:0]  aluControlE;
+logic [31:0] rd1E, rd2E, pcE, immExtE, pcPlus4E, srcAE, srcBE, aluResultE, writeDataE, pcTargetE;
+logic [4:0]  rdE;
+logic zeroE, pcSrcE;
+// Memory
+logic regWriteM;
+logic [1:0]  resultSrcM;
+logic [31:0] pcPlus4M;
+logic [4:0]  rdM;
+// Writeback
+logic regWriteW;
+logic [1:0]  resultSrcW;
+logic [31:0] aluResultW, readDataW, pcPlus4W, resultW;
+logic [4:0]  rdW;
 
-//register file logic
+
+//FETCH STAGE
+mux2 #(32) pcMux(pcPlus4F, pcTargetE, pcSrcE, pcNext);
+
+flopr #(.size(32)) PC(
+    .clk(clk), 
+    .rst(reset), 
+    .d(pcNext), 
+    .q(pcF)
+);
+
+assign pcPlus4F = pcF + 32'd4;
+
+if_id_reg IF_ID(
+    .clk(clk), .rst(reset),
+    .instrF(instrF), .pcF(pcF), .pcPlus4F(pcPlus4F),
+    .instrD(instrD), .pcD(pcD), .pcPlus4D(pcPlus4D)
+);
+
+
+//DECODE STAGE
+assign rdD = instrD[11:7]; // Extragem adresa registrului destinatie
+
 regfile RegFile(
     .clk(clk),
-    .WE3(regWrite),
-    .A1(instr[19:15]),
-    .A2(instr[24:20]),
-    .A3(instr[11:7]),
-    .WD3(result),
-    .RD1(srcA),
-    .RD2(writeData)
+    .WE3(regWriteW),           // ATENTIE: Semnalul de scriere vine din stadiul W!
+    .A1(instrD[19:15]),
+    .A2(instrD[24:20]),
+    .A3(rdW),                  // ATENTIE: Destinatia vine din stadiul W!
+    .WD3(resultW),             // ATENTIE: Datele vin din stadiul W!
+    .RD1(rd1D),
+    .RD2(rd2D)
 );
 
-extend Extend(instr[31:7], immSrc, immExt);
+extend Extend(
+    .instr(instrD[31:7]), 
+    .immSrc(immSrcD), 
+    .immExt(immExtD)
+);
 
-//ALU logic    
-mux2 #(32) SRCbMux(writeData, immExt, aluSrc, srcB);
-alu ALU (srcA, srcB, aluControl, aluResult, zero);
-mux3 #(32) ResultMux (aluResult, readData, pcPlus4, resultSrc, result);   
+//ID/EX 
+id_ex_reg ID_EX(
+    .clk(clk), .rst(reset),
+    .regWriteD(regWriteD), .resultSrcD(resultSrcD), .memWriteD(memWriteD),
+    .jumpD(jumpD), .branchD(branchD), .aluControlD(aluControlD), .aluSrcD(aluSrcD),
+    .rd1D(rd1D), .rd2D(rd2D), .pcD(pcD), .rdD(rdD), .immExtD(immExtD), .pcPlus4D(pcPlus4D),
+    .regWriteE(regWriteE), .resultSrcE(resultSrcE), .memWriteE(memWriteE),
+    .jumpE(jumpE), .branchE(branchE), .aluControlE(aluControlE), .aluSrcE(aluSrcE),
+    .rd1E(rd1E), .rd2E(rd2E), .pcE(pcE), .rdE(rdE), .immExtE(immExtE), .pcPlus4E(pcPlus4E)
+);
+
+
+assign srcAE = rd1E;
+assign writeDataE = rd2E;
+
+mux2 #(32) srcBMux(writeDataE, immExtE, aluSrcE, srcBE);
+
+alu ALU(
+    .in0(srcAE), 
+    .in1(srcBE), 
+    .sel(aluControlE), 
+    .out(aluResultE), 
+    .zf(zeroE)
+);
+
+assign pcTargetE = pcE + immExtE;
+assign pcSrcE = (branchE & zeroE) | jumpE; 
+
+//EX/MEM
+ex_mem_reg EX_MEM(
+    .clk(clk), .rst(reset),
+    .regWriteE(regWriteE), .resultSrcE(resultSrcE), .memWriteE(memWriteE),
+    .aluResultE(aluResultE), .writeDataE(writeDataE), .rdE(rdE), .pcPlus4E(pcPlus4E),
+    .regWriteM(regWriteM), .resultSrcM(resultSrcM), .memWriteM(memWriteM),
+    .aluResultM(aluResultM), .writeDataM(writeDataM), .rdM(rdM), .pcPlus4M(pcPlus4M)
+);
+
+//REGISTRU MEM/WB
+mem_wb_reg MEM_WB(
+    .clk(clk), .rst(reset),
+    .regWriteM(regWriteM), .resultSrcM(resultSrcM),
+    .aluResultM(aluResultM), .readDataM(readDataM), .rdM(rdM), .pcPlus4M(pcPlus4M),
+    .regWriteW(regWriteW), .resultSrcW(resultSrcW),
+    .aluResultW(aluResultW), .readDataW(readDataW), .rdW(rdW), .pcPlus4W(pcPlus4W)
+);
+
+
+mux3 #(32) resultMux(
+    .in0(aluResultW), 
+    .in1(readDataW), 
+    .in2(pcPlus4W), 
+    .sel(resultSrcW), 
+    .out(resultW)
+);
+
 endmodule
