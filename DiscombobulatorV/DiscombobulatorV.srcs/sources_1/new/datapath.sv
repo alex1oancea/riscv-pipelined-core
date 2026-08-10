@@ -40,7 +40,7 @@ logic [31:0] aluResultW, readDataW, pcPlus4W, resultW;
 logic [4:0]  rdW;
 //Hazard Unit
 logic [1:0] forwardAE, forwardBE;
-
+logic stallF, stallD, flushE, flushD;
 //FETCH STAGE
 mux2 #(32) pcMux(pcPlus4F, pcTargetE, pcSrcE, pcNext);
 
@@ -48,7 +48,8 @@ flopr #(.size(32)) PC(
     .clk(clk), 
     .rst(reset), 
     .d(pcNext), 
-    .q(pcF)
+    .q(pcF),
+    .en(stallF)
 );
 
 assign pcPlus4F = pcF + 32'd4;
@@ -56,7 +57,8 @@ assign pcPlus4F = pcF + 32'd4;
 if_id_reg IF_ID(
     .clk(clk), .rst(reset),
     .instrF(instrF), .pcF(pcF), .pcPlus4F(pcPlus4F),
-    .instrD(instrD), .pcD(pcD), .pcPlus4D(pcPlus4D)
+    .instrD(instrD), .pcD(pcD), .pcPlus4D(pcPlus4D),
+    .en(stallD), .clr(flushD)
 );
 
 
@@ -90,7 +92,8 @@ id_ex_reg ID_EX(
     .rd1D(rd1D), .rd2D(rd2D), .pcD(pcD), .rdD(rdD), .immExtD(immExtD), .pcPlus4D(pcPlus4D),
     .regWriteE(regWriteE), .resultSrcE(resultSrcE), .memWriteE(memWriteE),
     .jumpE(jumpE), .branchE(branchE), .aluControlE(aluControlE), .aluSrcE(aluSrcE),
-    .rd1E(rd1E), .rd2E(rd2E), .pcE(pcE), .rdE(rdE), .immExtE(immExtE), .pcPlus4E(pcPlus4E)
+    .rd1E(rd1E), .rd2E(rd2E), .pcE(pcE), .rdE(rdE), .immExtE(immExtE), .pcPlus4E(pcPlus4E),
+    .clr(flushE)
 );
 
 
@@ -102,7 +105,10 @@ hazardUnit HazardUnit(
     .regWriteM(regWriteM),
     .regWriteW(regWriteW),
     .forwardAE(forwardAE),
-    .forwardBE(forwardBE)
+    .forwardBE(forwardBE),
+    .stallF(stallF), .stallD(stallD), .rs1D(rs1), .rs2D(rs2D), .rdE(rdE), 
+    .resultSrcE(resultSrcE[0]), .pcSrcE(pcSrcE),
+    .flushD(flushD)
     );
 
 mux3 #32 MuxForwardA (rd1E, resultW, aluResultM, forwardAE, srcAE);

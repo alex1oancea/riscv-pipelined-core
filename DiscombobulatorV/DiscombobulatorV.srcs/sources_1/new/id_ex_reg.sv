@@ -16,6 +16,7 @@ module id_ex_reg (
     input logic [31:0] pcPlus4D,
     input logic [19:15] rs1D,
     input logic [24:20] rs2D,
+    input logic clr,
     output logic [19:15] rs1E,
     output logic [24:20] rs2E,
     output logic pcE,
@@ -34,7 +35,7 @@ module id_ex_reg (
 );
 
 always_ff @(posedge clk, posedge rst) begin
-    if(rst == 1)
+    if(rst == 1 || clr == 1)
         begin
             regWriteE <= 0;
             memWriteE <= 0;
