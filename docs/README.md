@@ -20,8 +20,8 @@ For a deep dive into the microarchitecture, critical path analysis, hardware sch
 - [x] Arithmetic Logic Unit (ALU)
 - [x] Register File
 - [x] Datapath Routing (Single-Cycle)
-- [ ] Pipeline Registers (IF/ID, ID/EX, EX/MEM, MEM/WB)
-- [ ] Hazard Unit (Forwarding & Stalling)
+- [x] Pipeline Registers (IF/ID, ID/EX, EX/MEM, MEM/WB)
+- [x] Hazard Unit (Forwarding & Stalling)
 
 ## 🛠️ Tools Used
 * **Simulation & Synthesis:** Xilinx Vivado
