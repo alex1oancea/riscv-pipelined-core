@@ -32,7 +32,7 @@ always_ff @(posedge clk, posedge rst) begin
             rdW <= rdM;
             aluResultW <= aluResultM;
             pcPlus4W <= pcPlus4M;
-            readDataW <= readDataW;       
+            readDataW <= readDataM;       
         end
 end
 

@@ -20,7 +20,8 @@ module datapath(
 logic [31:0] pcNext, pcPlus4F;
 // Decode
 logic [31:0] pcD, pcPlus4D, rd1D, rd2D, immExtD;
-logic [4:0]  rdD, rs1D, rs2D;
+logic [4:0]  rdD;
+
 // Execute
 logic regWriteE, memWriteE, jumpE, branchE, aluSrcE;
 logic [1:0]  resultSrcE;
@@ -106,9 +107,9 @@ hazardUnit HazardUnit(
     .regWriteW(regWriteW),
     .forwardAE(forwardAE),
     .forwardBE(forwardBE),
-    .stallF(stallF), .stallD(stallD), .rs1D(rs1), .rs2D(rs2D), .rdE(rdE), 
+    .stallF(stallF), .stallD(stallD), .rs1D(instrD[19:15]), .rs2D(instrD[24:20]), .rdE(rdE), 
     .resultSrcE(resultSrcE[0]), .pcSrcE(pcSrcE),
-    .flushD(flushD)
+    .flushD(flushD), .flushE(flushE)
     );
 
 mux3 #32 MuxForwardA (rd1E, resultW, aluResultM, forwardAE, srcAE);

@@ -15,7 +15,7 @@ always_ff @(posedge clk, posedge rst)begin
     if(rst == 1 || clr == 1)begin
         pcPlus4D <= 0;
         pcD <= 0;
-        instrD <= 0;
+        instrD <= 32'h00000013;
     end
     else if(en == 0)begin
         instrD <= instrF;

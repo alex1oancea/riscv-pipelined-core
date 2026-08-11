@@ -8,7 +8,7 @@ module id_ex_reg (
     input logic aluSrcD,
     input logic [1:0] resultSrcD,
     input logic [2:0] aluControlD,
-    input logic pcD,
+    input logic [31:0] pcD,
     input logic [31:0] rd1D,
     input logic [31:0] rd2D,
     input logic [11:7] rdD,
@@ -19,7 +19,7 @@ module id_ex_reg (
     input logic clr,
     output logic [19:15] rs1E,
     output logic [24:20] rs2E,
-    output logic pcE,
+    output logic [31:0] pcE,
     output logic [31:0] rd1E,
     output logic [31:0] rd2E,
     output logic [11:7] rdE,
@@ -44,7 +44,7 @@ always_ff @(posedge clk, posedge rst) begin
             aluSrcE <= 0;
             resultSrcE <= 2'd0;
             aluControlE <= 3'd0;
-            pcE <= 0;
+            pcE <= 32'd0;
             rdE <= 5'd0;
             immExtE <= 32'd0;
             pcPlus4E <= 32'd0;

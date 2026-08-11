@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="163601fs"></ZoomEndTime>
+      <Cursor1Time time="223210fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="234"></NameColumnWidth>
+      <ValueColumnWidth column_width="140"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="3" />
+   <wvobject fp_name="group719" type="group">
+      <obj_property name="label">tb</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/memWrite" type="logic">
+         <obj_property name="ElementShortName">memWrite</obj_property>
+         <obj_property name="ObjectShortName">memWrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/writeData" type="array">
+         <obj_property name="ElementShortName">writeData[31:0]</obj_property>
+         <obj_property name="ObjectShortName">writeData[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/dataAdr" type="array">
+         <obj_property name="ElementShortName">dataAdr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dataAdr[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group732" type="group">
+      <obj_property name="label">cntrl</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/op" type="array">
+         <obj_property name="ElementShortName">op[6:0]</obj_property>
+         <obj_property name="ObjectShortName">op[6:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/funct3" type="array">
+         <obj_property name="ElementShortName">funct3[2:0]</obj_property>
+         <obj_property name="ObjectShortName">funct3[2:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/funct7b5" type="logic">
+         <obj_property name="ElementShortName">funct7b5</obj_property>
+         <obj_property name="ObjectShortName">funct7b5</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/resultSrc" type="array">
+         <obj_property name="ElementShortName">resultSrc[1:0]</obj_property>
+         <obj_property name="ObjectShortName">resultSrc[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/memWrite" type="logic">
+         <obj_property name="ElementShortName">memWrite</obj_property>
+         <obj_property name="ObjectShortName">memWrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/aluSrc" type="logic">
+         <obj_property name="ElementShortName">aluSrc</obj_property>
+         <obj_property name="ObjectShortName">aluSrc</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/immSrc" type="array">
+         <obj_property name="ElementShortName">immSrc[1:0]</obj_property>
+         <obj_property name="ObjectShortName">immSrc[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/regWrite" type="logic">
+         <obj_property name="ElementShortName">regWrite</obj_property>
+         <obj_property name="ObjectShortName">regWrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/aluControl" type="array">
+         <obj_property name="ElementShortName">aluControl[2:0]</obj_property>
+         <obj_property name="ObjectShortName">aluControl[2:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/branch" type="logic">
+         <obj_property name="ElementShortName">branch</obj_property>
+         <obj_property name="ObjectShortName">branch</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/jump" type="logic">
+         <obj_property name="ElementShortName">jump</obj_property>
+         <obj_property name="ObjectShortName">jump</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Cntrl/aluOp" type="array">
+         <obj_property name="ElementShortName">aluOp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">aluOp[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="group719" type="group">
+         <obj_property name="label">tb</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/tb/clk" type="logic">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/reset" type="logic">
+            <obj_property name="ElementShortName">reset</obj_property>
+            <obj_property name="ObjectShortName">reset</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/memWrite" type="logic">
+            <obj_property name="ElementShortName">memWrite</obj_property>
+            <obj_property name="ObjectShortName">memWrite</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/writeData" type="array">
+            <obj_property name="ElementShortName">writeData[31:0]</obj_property>
+            <obj_property name="ObjectShortName">writeData[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/dataAdr" type="array">
+            <obj_property name="ElementShortName">dataAdr[31:0]</obj_property>
+            <obj_property name="ObjectShortName">dataAdr[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group732" type="group">
+         <obj_property name="label">cntrl</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/op" type="array">
+            <obj_property name="ElementShortName">op[6:0]</obj_property>
+            <obj_property name="ObjectShortName">op[6:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/funct3" type="array">
+            <obj_property name="ElementShortName">funct3[2:0]</obj_property>
+            <obj_property name="ObjectShortName">funct3[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/funct7b5" type="logic">
+            <obj_property name="ElementShortName">funct7b5</obj_property>
+            <obj_property name="ObjectShortName">funct7b5</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/resultSrc" type="array">
+            <obj_property name="ElementShortName">resultSrc[1:0]</obj_property>
+            <obj_property name="ObjectShortName">resultSrc[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/memWrite" type="logic">
+            <obj_property name="ElementShortName">memWrite</obj_property>
+            <obj_property name="ObjectShortName">memWrite</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/aluSrc" type="logic">
+            <obj_property name="ElementShortName">aluSrc</obj_property>
+            <obj_property name="ObjectShortName">aluSrc</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/immSrc" type="array">
+            <obj_property name="ElementShortName">immSrc[1:0]</obj_property>
+            <obj_property name="ObjectShortName">immSrc[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/regWrite" type="logic">
+            <obj_property name="ElementShortName">regWrite</obj_property>
+            <obj_property name="ObjectShortName">regWrite</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/aluControl" type="array">
+            <obj_property name="ElementShortName">aluControl[2:0]</obj_property>
+            <obj_property name="ObjectShortName">aluControl[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/branch" type="logic">
+            <obj_property name="ElementShortName">branch</obj_property>
+            <obj_property name="ObjectShortName">branch</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/jump" type="logic">
+            <obj_property name="ElementShortName">jump</obj_property>
+            <obj_property name="ObjectShortName">jump</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb/Dut/Core/Cntrl/aluOp" type="array">
+            <obj_property name="ElementShortName">aluOp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">aluOp[1:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/resultSrcD" type="array">
+         <obj_property name="ElementShortName">resultSrcD[1:0]</obj_property>
+         <obj_property name="ObjectShortName">resultSrcD[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluSrcD" type="logic">
+         <obj_property name="ElementShortName">aluSrcD</obj_property>
+         <obj_property name="ObjectShortName">aluSrcD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/regWriteD" type="logic">
+         <obj_property name="ElementShortName">regWriteD</obj_property>
+         <obj_property name="ObjectShortName">regWriteD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/memWriteD" type="logic">
+         <obj_property name="ElementShortName">memWriteD</obj_property>
+         <obj_property name="ObjectShortName">memWriteD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/immSrcD" type="array">
+         <obj_property name="ElementShortName">immSrcD[1:0]</obj_property>
+         <obj_property name="ObjectShortName">immSrcD[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluControlD" type="array">
+         <obj_property name="ElementShortName">aluControlD[2:0]</obj_property>
+         <obj_property name="ObjectShortName">aluControlD[2:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/branchD" type="logic">
+         <obj_property name="ElementShortName">branchD</obj_property>
+         <obj_property name="ObjectShortName">branchD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/jumpD" type="logic">
+         <obj_property name="ElementShortName">jumpD</obj_property>
+         <obj_property name="ObjectShortName">jumpD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcF" type="array">
+         <obj_property name="ElementShortName">pcF[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcF[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/instrF" type="array">
+         <obj_property name="ElementShortName">instrF[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instrF[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluResultM" type="array">
+         <obj_property name="ElementShortName">aluResultM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResultM[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/writeDataM" type="array">
+         <obj_property name="ElementShortName">writeDataM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">writeDataM[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/memWriteM" type="logic">
+         <obj_property name="ElementShortName">memWriteM</obj_property>
+         <obj_property name="ObjectShortName">memWriteM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/readDataM" type="array">
+         <obj_property name="ElementShortName">readDataM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">readDataM[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/instrD" type="array">
+         <obj_property name="ElementShortName">instrD[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instrD[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcNext" type="array">
+         <obj_property name="ElementShortName">pcNext[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcNext[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcPlus4F" type="array">
+         <obj_property name="ElementShortName">pcPlus4F[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcPlus4F[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcD" type="array">
+         <obj_property name="ElementShortName">pcD[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcD[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcPlus4D" type="array">
+         <obj_property name="ElementShortName">pcPlus4D[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcPlus4D[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rd1D" type="array">
+         <obj_property name="ElementShortName">rd1D[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd1D[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rd2D" type="array">
+         <obj_property name="ElementShortName">rd2D[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd2D[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/immExtD" type="array">
+         <obj_property name="ElementShortName">immExtD[31:0]</obj_property>
+         <obj_property name="ObjectShortName">immExtD[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rdD" type="array">
+         <obj_property name="ElementShortName">rdD[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdD[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rs1D" type="array">
+         <obj_property name="ElementShortName">rs1D[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs1D[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rs2D" type="array">
+         <obj_property name="ElementShortName">rs2D[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs2D[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/regWriteE" type="logic">
+         <obj_property name="ElementShortName">regWriteE</obj_property>
+         <obj_property name="ObjectShortName">regWriteE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/memWriteE" type="logic">
+         <obj_property name="ElementShortName">memWriteE</obj_property>
+         <obj_property name="ObjectShortName">memWriteE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/jumpE" type="logic">
+         <obj_property name="ElementShortName">jumpE</obj_property>
+         <obj_property name="ObjectShortName">jumpE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/branchE" type="logic">
+         <obj_property name="ElementShortName">branchE</obj_property>
+         <obj_property name="ObjectShortName">branchE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluSrcE" type="logic">
+         <obj_property name="ElementShortName">aluSrcE</obj_property>
+         <obj_property name="ObjectShortName">aluSrcE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/resultSrcE" type="array">
+         <obj_property name="ElementShortName">resultSrcE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">resultSrcE[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluControlE" type="array">
+         <obj_property name="ElementShortName">aluControlE[2:0]</obj_property>
+         <obj_property name="ObjectShortName">aluControlE[2:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rd1E" type="array">
+         <obj_property name="ElementShortName">rd1E[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd1E[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rd2E" type="array">
+         <obj_property name="ElementShortName">rd2E[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd2E[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcE" type="array">
+         <obj_property name="ElementShortName">pcE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/immExtE" type="array">
+         <obj_property name="ElementShortName">immExtE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">immExtE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcPlus4E" type="array">
+         <obj_property name="ElementShortName">pcPlus4E[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcPlus4E[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/srcAE" type="array">
+         <obj_property name="ElementShortName">srcAE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">srcAE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/srcBE" type="array">
+         <obj_property name="ElementShortName">srcBE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">srcBE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluResultE" type="array">
+         <obj_property name="ElementShortName">aluResultE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResultE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/writeDataE" type="array">
+         <obj_property name="ElementShortName">writeDataE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">writeDataE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcTargetE" type="array">
+         <obj_property name="ElementShortName">pcTargetE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcTargetE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rdE" type="array">
+         <obj_property name="ElementShortName">rdE[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdE[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rs1E" type="array">
+         <obj_property name="ElementShortName">rs1E[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs1E[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rs2E" type="array">
+         <obj_property name="ElementShortName">rs2E[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs2E[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/zeroE" type="logic">
+         <obj_property name="ElementShortName">zeroE</obj_property>
+         <obj_property name="ObjectShortName">zeroE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcSrcE" type="logic">
+         <obj_property name="ElementShortName">pcSrcE</obj_property>
+         <obj_property name="ObjectShortName">pcSrcE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/regWriteM" type="logic">
+         <obj_property name="ElementShortName">regWriteM</obj_property>
+         <obj_property name="ObjectShortName">regWriteM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/resultSrcM" type="array">
+         <obj_property name="ElementShortName">resultSrcM[1:0]</obj_property>
+         <obj_property name="ObjectShortName">resultSrcM[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcPlus4M" type="array">
+         <obj_property name="ElementShortName">pcPlus4M[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcPlus4M[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rdM" type="array">
+         <obj_property name="ElementShortName">rdM[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdM[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/regWriteW" type="logic">
+         <obj_property name="ElementShortName">regWriteW</obj_property>
+         <obj_property name="ObjectShortName">regWriteW</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/resultSrcW" type="array">
+         <obj_property name="ElementShortName">resultSrcW[1:0]</obj_property>
+         <obj_property name="ObjectShortName">resultSrcW[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluResultW" type="array">
+         <obj_property name="ElementShortName">aluResultW[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResultW[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/readDataW" type="array">
+         <obj_property name="ElementShortName">readDataW[31:0]</obj_property>
+         <obj_property name="ObjectShortName">readDataW[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcPlus4W" type="array">
+         <obj_property name="ElementShortName">pcPlus4W[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcPlus4W[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/resultW" type="array">
+         <obj_property name="ElementShortName">resultW[31:0]</obj_property>
+         <obj_property name="ObjectShortName">resultW[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rdW" type="array">
+         <obj_property name="ElementShortName">rdW[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdW[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/forwardAE" type="array">
+         <obj_property name="ElementShortName">forwardAE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">forwardAE[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/forwardBE" type="array">
+         <obj_property name="ElementShortName">forwardBE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">forwardBE[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/stallF" type="logic">
+         <obj_property name="ElementShortName">stallF</obj_property>
+         <obj_property name="ObjectShortName">stallF</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/stallD" type="logic">
+         <obj_property name="ElementShortName">stallD</obj_property>
+         <obj_property name="ObjectShortName">stallD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/flushE" type="logic">
+         <obj_property name="ElementShortName">flushE</obj_property>
+         <obj_property name="ObjectShortName">flushE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/flushD" type="logic">
+         <obj_property name="ElementShortName">flushD</obj_property>
+         <obj_property name="ObjectShortName">flushD</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group884" type="group">
+      <obj_property name="label">data</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb/Dut/Core/Data/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/resultSrcD" type="array">
+         <obj_property name="ElementShortName">resultSrcD[1:0]</obj_property>
+         <obj_property name="ObjectShortName">resultSrcD[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluSrcD" type="logic">
+         <obj_property name="ElementShortName">aluSrcD</obj_property>
+         <obj_property name="ObjectShortName">aluSrcD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/regWriteD" type="logic">
+         <obj_property name="ElementShortName">regWriteD</obj_property>
+         <obj_property name="ObjectShortName">regWriteD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/memWriteD" type="logic">
+         <obj_property name="ElementShortName">memWriteD</obj_property>
+         <obj_property name="ObjectShortName">memWriteD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/immSrcD" type="array">
+         <obj_property name="ElementShortName">immSrcD[1:0]</obj_property>
+         <obj_property name="ObjectShortName">immSrcD[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluControlD" type="array">
+         <obj_property name="ElementShortName">aluControlD[2:0]</obj_property>
+         <obj_property name="ObjectShortName">aluControlD[2:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/branchD" type="logic">
+         <obj_property name="ElementShortName">branchD</obj_property>
+         <obj_property name="ObjectShortName">branchD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/jumpD" type="logic">
+         <obj_property name="ElementShortName">jumpD</obj_property>
+         <obj_property name="ObjectShortName">jumpD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcF" type="array">
+         <obj_property name="ElementShortName">pcF[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcF[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/instrF" type="array">
+         <obj_property name="ElementShortName">instrF[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instrF[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluResultM" type="array">
+         <obj_property name="ElementShortName">aluResultM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResultM[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/writeDataM" type="array">
+         <obj_property name="ElementShortName">writeDataM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">writeDataM[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/memWriteM" type="logic">
+         <obj_property name="ElementShortName">memWriteM</obj_property>
+         <obj_property name="ObjectShortName">memWriteM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/readDataM" type="array">
+         <obj_property name="ElementShortName">readDataM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">readDataM[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/instrD" type="array">
+         <obj_property name="ElementShortName">instrD[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instrD[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcNext" type="array">
+         <obj_property name="ElementShortName">pcNext[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcNext[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcPlus4F" type="array">
+         <obj_property name="ElementShortName">pcPlus4F[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcPlus4F[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcD" type="array">
+         <obj_property name="ElementShortName">pcD[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcD[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcPlus4D" type="array">
+         <obj_property name="ElementShortName">pcPlus4D[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcPlus4D[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rd1D" type="array">
+         <obj_property name="ElementShortName">rd1D[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd1D[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rd2D" type="array">
+         <obj_property name="ElementShortName">rd2D[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd2D[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/immExtD" type="array">
+         <obj_property name="ElementShortName">immExtD[31:0]</obj_property>
+         <obj_property name="ObjectShortName">immExtD[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rdD" type="array">
+         <obj_property name="ElementShortName">rdD[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdD[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rs1D" type="array">
+         <obj_property name="ElementShortName">rs1D[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs1D[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rs2D" type="array">
+         <obj_property name="ElementShortName">rs2D[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs2D[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/regWriteE" type="logic">
+         <obj_property name="ElementShortName">regWriteE</obj_property>
+         <obj_property name="ObjectShortName">regWriteE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/memWriteE" type="logic">
+         <obj_property name="ElementShortName">memWriteE</obj_property>
+         <obj_property name="ObjectShortName">memWriteE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/jumpE" type="logic">
+         <obj_property name="ElementShortName">jumpE</obj_property>
+         <obj_property name="ObjectShortName">jumpE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/branchE" type="logic">
+         <obj_property name="ElementShortName">branchE</obj_property>
+         <obj_property name="ObjectShortName">branchE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluSrcE" type="logic">
+         <obj_property name="ElementShortName">aluSrcE</obj_property>
+         <obj_property name="ObjectShortName">aluSrcE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/resultSrcE" type="array">
+         <obj_property name="ElementShortName">resultSrcE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">resultSrcE[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluControlE" type="array">
+         <obj_property name="ElementShortName">aluControlE[2:0]</obj_property>
+         <obj_property name="ObjectShortName">aluControlE[2:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rd1E" type="array">
+         <obj_property name="ElementShortName">rd1E[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd1E[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rd2E" type="array">
+         <obj_property name="ElementShortName">rd2E[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd2E[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcE" type="array">
+         <obj_property name="ElementShortName">pcE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/immExtE" type="array">
+         <obj_property name="ElementShortName">immExtE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">immExtE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcPlus4E" type="array">
+         <obj_property name="ElementShortName">pcPlus4E[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcPlus4E[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/srcAE" type="array">
+         <obj_property name="ElementShortName">srcAE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">srcAE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/srcBE" type="array">
+         <obj_property name="ElementShortName">srcBE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">srcBE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluResultE" type="array">
+         <obj_property name="ElementShortName">aluResultE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResultE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/writeDataE" type="array">
+         <obj_property name="ElementShortName">writeDataE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">writeDataE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcTargetE" type="array">
+         <obj_property name="ElementShortName">pcTargetE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcTargetE[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rdE" type="array">
+         <obj_property name="ElementShortName">rdE[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdE[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rs1E" type="array">
+         <obj_property name="ElementShortName">rs1E[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs1E[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rs2E" type="array">
+         <obj_property name="ElementShortName">rs2E[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs2E[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/zeroE" type="logic">
+         <obj_property name="ElementShortName">zeroE</obj_property>
+         <obj_property name="ObjectShortName">zeroE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcSrcE" type="logic">
+         <obj_property name="ElementShortName">pcSrcE</obj_property>
+         <obj_property name="ObjectShortName">pcSrcE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/regWriteM" type="logic">
+         <obj_property name="ElementShortName">regWriteM</obj_property>
+         <obj_property name="ObjectShortName">regWriteM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/resultSrcM" type="array">
+         <obj_property name="ElementShortName">resultSrcM[1:0]</obj_property>
+         <obj_property name="ObjectShortName">resultSrcM[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcPlus4M" type="array">
+         <obj_property name="ElementShortName">pcPlus4M[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcPlus4M[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rdM" type="array">
+         <obj_property name="ElementShortName">rdM[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdM[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/regWriteW" type="logic">
+         <obj_property name="ElementShortName">regWriteW</obj_property>
+         <obj_property name="ObjectShortName">regWriteW</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/resultSrcW" type="array">
+         <obj_property name="ElementShortName">resultSrcW[1:0]</obj_property>
+         <obj_property name="ObjectShortName">resultSrcW[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/aluResultW" type="array">
+         <obj_property name="ElementShortName">aluResultW[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResultW[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/readDataW" type="array">
+         <obj_property name="ElementShortName">readDataW[31:0]</obj_property>
+         <obj_property name="ObjectShortName">readDataW[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/pcPlus4W" type="array">
+         <obj_property name="ElementShortName">pcPlus4W[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcPlus4W[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/resultW" type="array">
+         <obj_property name="ElementShortName">resultW[31:0]</obj_property>
+         <obj_property name="ObjectShortName">resultW[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/rdW" type="array">
+         <obj_property name="ElementShortName">rdW[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdW[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/forwardAE" type="array">
+         <obj_property name="ElementShortName">forwardAE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">forwardAE[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/forwardBE" type="array">
+         <obj_property name="ElementShortName">forwardBE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">forwardBE[1:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/stallF" type="logic">
+         <obj_property name="ElementShortName">stallF</obj_property>
+         <obj_property name="ObjectShortName">stallF</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/stallD" type="logic">
+         <obj_property name="ElementShortName">stallD</obj_property>
+         <obj_property name="ObjectShortName">stallD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/flushE" type="logic">
+         <obj_property name="ElementShortName">flushE</obj_property>
+         <obj_property name="ObjectShortName">flushE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/Dut/Core/Data/flushD" type="logic">
+         <obj_property name="ElementShortName">flushD</obj_property>
+         <obj_property name="ObjectShortName">flushD</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

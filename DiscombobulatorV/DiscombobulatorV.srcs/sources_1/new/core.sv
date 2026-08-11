@@ -9,8 +9,8 @@ module core(
     );
 
 logic aluSrcD, regWriteD, jumpD, branchD, memWriteD;
-logic [1:0] resultSrc, immSrc;
-logic [2:0] aluControl;
+logic [1:0] resultSrcD, immSrcD;
+logic [2:0] aluControlD;
 logic [31:0] instrD;
 
 controller Cntrl (

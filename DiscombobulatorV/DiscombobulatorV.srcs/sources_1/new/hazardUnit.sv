@@ -35,7 +35,7 @@ always_comb begin
     else forwardBE = 2'b00; //no forward
     
     //stall logic
-    lwStall = resultSrcE &L ((rs1D == rdE) | (rs2D == rdE));
+    lwStall = resultSrcE & ((rs1D == rdE) | (rs2D == rdE));
     stallF = lwStall;
     stallD = lwStall;
     flushE = lwStall | pcSrcE;
